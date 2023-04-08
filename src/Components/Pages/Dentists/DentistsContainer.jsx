@@ -1,19 +1,20 @@
 import axios from "axios";
 import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../../../Context/GlobalContext";
+import Dentists from "./Dentists";
 
 const DentistsContainer = () => {
   const { state, dispatch } = useContext(GlobalContext);
   useEffect(() => {
     const getDentists = axios.get("https://jsonplaceholder.typicode.com/users");
     getDentists
-      .then((res) => dispatch({ type: "GET_DENTIST", payload: res.data }))
+      .then((res) => dispatch({ type: "GET_DENTISTS", payload: res.data }))
       .catch((err) => console.log(err));
   }, []);
-  console.log(state.odontologists);
+
   return (
     <div>
-      <h1>Hola Profesionales</h1>
+      <Dentists odontologists={state.odontologists}/>
     </div>
   );
 };

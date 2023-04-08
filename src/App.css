@@ -1,1 +1,9 @@
-
+.light{
+    background-color: antiquewhite;
+}
+.dark{
+    background-color: aqua;
+}
+.dark h2.blanco{
+    color: aliceblue;
+}
