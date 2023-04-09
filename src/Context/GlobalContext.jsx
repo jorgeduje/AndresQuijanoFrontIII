@@ -13,6 +13,8 @@ const globalReducer = (state, action) => {
       return { ...state, odontologists: action.payload };
     case "GET_DENTIST":
       return { ...state, odontologist: action.payload };
+    case "FAVORITES":
+      return { ...state, favs: [...state.favs, action.payload] };
     case "DARK_MODE":
       return { ...state, dark: !state.dark };
     default:

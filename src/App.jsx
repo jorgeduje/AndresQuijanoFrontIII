@@ -6,6 +6,9 @@ import GlobalContextProvider from "./Context/GlobalContext";
 import DentistsContainer from "./Components/Pages/Dentists/DentistsContainer";
 import Home from "./Components/Pages/Home/Home";
 import DentistContainer from "./Components/Pages/Dentist/DentistContainer";
+import FavsContainer from "./Components/Pages/Favs/FavsContainer";
+import ContactContainer from "./Components/Pages/Contact/ContactContainer";
+import ErrorPageContainer from "./Components/Pages/ErrorPage/ErrorPageContainer";
 
 
 
@@ -20,11 +23,11 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/dashboard" element={<DentistsContainer />} />
                 <Route path="/dentist/:id" element={<DentistContainer />} />
-                <Route path="/favs" element={<h1>Favoritos</h1>} />
-                <Route path="/contact" element={<h1>Contacto</h1>} />
+                <Route path="/favs" element={<FavsContainer />} />
+                <Route path="/contact" element={<ContactContainer />} />
               </Route>
             </Route>
-            <Route path="*" element={<h1>Error 404</h1>} />
+            <Route path="*" element={<ErrorPageContainer />} />
           </Routes>
         </GlobalContextProvider>
       </BrowserRouter>

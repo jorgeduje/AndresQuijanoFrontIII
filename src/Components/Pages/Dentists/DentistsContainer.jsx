@@ -11,7 +11,6 @@ const DentistsContainer = () => {
       .then((res) => dispatch({ type: "GET_DENTISTS", payload: res.data }))
       .catch((err) => console.log(err));
   }, []);
-
   return (
     <div>
       <Dentists odontologists={state.odontologists}/>
