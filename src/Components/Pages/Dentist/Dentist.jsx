@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Dentist = () => {
+const Dentist = ({ odontologist }) => {
   return (
-    <div>Dentist</div>
+    <div>
+      {odontologist}
+    </div>
   )
 }
 

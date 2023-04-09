@@ -1,22 +1,22 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-
+import stylesFooter from "./Footer.module.css";
 const Footer = () => {
   return (
     <div>
       <Outlet />
-      <ul>
+      <ul className={stylesFooter.container }>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className={stylesFooter.links }>Home</Link>
         </li>
         <li>
-          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/dashboard" className={stylesFooter.links }>Dashboard</Link>
         </li>
         <li>
-          <Link to="/favs">Favs</Link>
+          <Link to="/favs" className={stylesFooter.links }>Favs</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" className={stylesFooter.links }>Contact</Link>
         </li>
       </ul>
     </div>

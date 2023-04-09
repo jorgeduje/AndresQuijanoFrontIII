@@ -5,7 +5,7 @@ import axios from "axios";
 import { GlobalContext } from "../../../Context/GlobalContext";
 
 const DentistContainer = () => {
-  const { dispatch } = useContext(GlobalContext);
+  const { dispatch, state } = useContext(GlobalContext);
   const { id } = useParams();
   useEffect(() => {
     const getDentist = axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
@@ -15,7 +15,7 @@ const DentistContainer = () => {
   }, []);
   return (
     <div>
-      <Dentist />
+      <Dentist odontologist={state.dispatch}/>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { GlobalContext } from "../../../Context/GlobalContext";
+import stylesNav from "./Navbar.module.css";
 
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
@@ -61,19 +62,19 @@ const Navbar = () => {
   }
   return (
     <div>
-      <ul>
-        <li>Logo</li>
+      <ul className={stylesNav.container}>
+        <li><img src="https://res.cloudinary.com/dm8kbjyi2/image/upload/v1681005006/logotipo_calvo_quijano_jr9f4h.svg" alt="Logo" className={stylesNav.imagen }/></li>
         <li>
-          <Link to="/">Home</Link>
+          <Link className={stylesNav.links } to="/">Home</Link>
         </li>
         <li>
-          <Link to="/dashboard">Dashboard</Link>
+          <Link className={stylesNav.links } to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link to="/favs">Favs</Link>
+          <Link className={stylesNav.links } to="/favs">Favs</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link className={stylesNav.links } to="/contact">Contact</Link>
         </li>
         <li>
           
@@ -81,7 +82,7 @@ const Navbar = () => {
             <FormControlLabel
               control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
               onChange={handleChange}
-              label={state.dark ? "A claro" : "A oscuro"}
+        
             />
           </FormGroup>
         </li>
