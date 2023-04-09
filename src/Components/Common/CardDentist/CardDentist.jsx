@@ -13,18 +13,21 @@ import StarIcon from "@mui/icons-material/Star";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import { Button } from "@mui/material";
 
-const CardDentist = ({ numberid, name, website, mail, phone }) => {
+
+
+const CardDentist = ({ odontologist, dispatch, favs }) => {
+  const ColoresStar = (favs.some(fav => fav.id === odontologist.id) ? {color: "#ffcc00"} : {color: "grey"})
   return (
     <div>
       <Card sx={{ maxWidth: 345 }}>
         <CardHeader
           action={
-            <IconButton aria-label="add to favorites">
-              <StarIcon />
+            <IconButton aria-label="add to favorites" onClick={()=>dispatch({type: "FAVORITES", payload: odontologist})}>
+              <StarIcon sx={ColoresStar} />
             </IconButton>
           }
-          title={name}
-          subheader={"Website: " + website}
+          title={odontologist.name}
+          subheader={"Website: " + odontologist.website}
         />
         <CardMedia
           component="img"
@@ -34,12 +37,12 @@ const CardDentist = ({ numberid, name, website, mail, phone }) => {
         />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            E-mail: {mail}<br />
-            Phone number: {phone}
+            E-mail: {odontologist.email}<br />
+            Phone number: {odontologist.phone}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <Link to={`/dentist/${numberid}`}>
+          <Link to={`/dentist/${odontologist.id}`}>
             <Button variant="outlined" startIcon={<ControlPointIcon />}>
               More info
             </Button>

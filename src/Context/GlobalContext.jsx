@@ -4,9 +4,16 @@ export const GlobalContext = createContext();
 const initialState = {
   odontologists: [],
   odontologist: {},
-  favs: [],
+  favs: JSON.parse(localStorage.getItem("favs")) || [],
   dark: false,
 };
+
+const remFav = (id, state)=>{
+  const newArr = state.favs.filter((fav) => fav.id !== id)
+  localStorage.setItem("favs", JSON.stringify(newArr))
+  return newArr
+}
+
 const globalReducer = (state, action) => {
   switch (action.type) {
     case "GET_DENTISTS":
@@ -14,7 +21,9 @@ const globalReducer = (state, action) => {
     case "GET_DENTIST":
       return { ...state, odontologist: action.payload };
     case "FAVORITES":
-      return { ...state, favs: [...state.favs, action.payload] };
+      const isFav = state.favs.some(fav => fav.id === action.payload.id)
+      isFav ? remFav(action.payload.id, state) : localStorage.setItem("favs" , JSON.stringify([...state.favs, action.payload]))
+      return isFav ? {...state, favs: remFav(action.payload.id, state)} : { ...state, favs: [...state.favs, action.payload] };
     case "DARK_MODE":
       return { ...state, dark: !state.dark };
     default:

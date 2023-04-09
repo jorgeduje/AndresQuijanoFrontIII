@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+import CardFav from "../../Common/CardFav/CardFav";
 
-const Favs = () => {
+
+const Favs = ({ favs }) => {
   return (
     <div>
-        <p>Favoritos</p>
+      <h1>Favoritos</h1>
+      {favs.map((favs) => {
+        return (
+        <CardFav key={favs.id} favs={favs}/>
+      )})}
     </div>
-  )
-}
+  );
+};
 
-export default Favs
+export default Favs;

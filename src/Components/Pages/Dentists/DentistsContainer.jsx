@@ -13,7 +13,7 @@ const DentistsContainer = () => {
   }, []);
   return (
     <div>
-      <Dentists odontologists={state.odontologists}/>
+      <Dentists odontologists={state.odontologists} dispatch={dispatch} favs={state.favs}/>
     </div>
   );
 };

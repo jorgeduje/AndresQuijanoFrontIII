@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Favs from "./Favs";
+import { GlobalContext } from "../../../Context/GlobalContext";
 
 const FavsContainer = () => {
-  return <Favs />;
+  const {state} = useContext(GlobalContext)
+  return (
+    <div>
+      <Favs favs={state.favs}/>
+      
+    </div>
+  );
 };
 
 export default FavsContainer;
