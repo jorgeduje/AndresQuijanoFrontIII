@@ -6,6 +6,6 @@
     background-color:rgb(145, 133, 221);
     height: 100vh;
 }
-.dark h2.blanco{
+.dark h2, .dark h1{
     color: aliceblue;
 }

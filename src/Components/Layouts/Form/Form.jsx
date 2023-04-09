@@ -37,8 +37,9 @@ const Form = () => {
   };
 
   return (
+    
     <div className={stylesForm.container}>
-      <h1 className="titulo">Contact</h1>
+      
       <form className={stylesForm.formulario} onSubmit={handleSubmit}>
         <label>Full name:</label>
         <input

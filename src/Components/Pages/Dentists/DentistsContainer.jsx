@@ -13,6 +13,7 @@ const DentistsContainer = () => {
   }, []);
   return (
     <div>
+      <h1>Dentists</h1>
       <Dentists odontologists={state.odontologists} dispatch={dispatch} favs={state.favs}/>
     </div>
   );

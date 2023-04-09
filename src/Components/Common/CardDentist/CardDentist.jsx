@@ -19,7 +19,7 @@ const CardDentist = ({ odontologist, dispatch, favs }) => {
   const ColoresStar = (favs.some(fav => fav.id === odontologist.id) ? {color: "#ffcc00"} : {color: "grey"})
   return (
     <div>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345}}>
         <CardHeader
           action={
             <IconButton aria-label="add to favorites" onClick={()=>dispatch({type: "FAVORITES", payload: odontologist})}>

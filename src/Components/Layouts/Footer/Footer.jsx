@@ -10,7 +10,7 @@ const Footer = () => {
           <Link to="/" className={stylesFooter.links }>Home</Link>
         </li>
         <li>
-          <Link to="/dashboard" className={stylesFooter.links }>Dashboard</Link>
+          <Link to="/dashboard" className={stylesFooter.links }>Dentists</Link>
         </li>
         <li>
           <Link to="/favs" className={stylesFooter.links }>Favs</Link>

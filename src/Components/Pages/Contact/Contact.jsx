@@ -4,6 +4,7 @@ import Form from '../../Layouts/Form/Form'
 
 const Contact = () => {
   return (
+    
     <Form />
   )
 }
