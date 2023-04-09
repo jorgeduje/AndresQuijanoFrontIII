@@ -15,7 +15,7 @@ const DentistContainer = () => {
   }, []);
   return (
     <div>
-      <Dentist odontologist={state.dispatch}/>
+      <Dentist odontologist={state.odontologist}/>
     </div>
   );
 };
